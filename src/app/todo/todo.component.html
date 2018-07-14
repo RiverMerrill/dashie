@@ -1,0 +1,22 @@
+<mat-card class="todo">
+  <mat-card-title class="toggle" (click)="toggleTodo()">Todo
+    <span *ngIf="!showTodo">▼</span>
+    <span *ngIf="showTodo">▲</span>
+  </mat-card-title>
+
+  <mat-list *ngIf="showTodo">
+    <hr/>
+    <mat-list-item *ngFor="let item of items">
+      <p><span class="remove" (click)="removeItem(item)">x</span> {{item.value}}</p>
+      <mat-checkbox [checked]="item.checked" (click)="checkItem(item)"></mat-checkbox>
+    </mat-list-item>
+    <mat-list-item>
+      <form (ngSubmit)="addItem(newItem)">
+        <mat-form-field>
+          <input name="newItem" [(ngModel)]="newItem" matInput placeholder="Add an item..." type="text" autocomplete="off">
+          <p *ngIf="itemExists" class="error">{{itemExists}} already exists</p>
+        </mat-form-field>
+      </form>
+    </mat-list-item>
+  </mat-list>
+</mat-card>
