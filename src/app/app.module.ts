@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { MatModule } from './mat.module';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { DragulaModule } from 'ng2-dragula';
 
 
 import { AppComponent } from './app.component';
@@ -23,7 +24,8 @@ import { TimeComponent } from './time/time.component';
     BrowserAnimationsModule,
     MatModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    DragulaModule
   ],
   providers: [],
   bootstrap: [AppComponent]
