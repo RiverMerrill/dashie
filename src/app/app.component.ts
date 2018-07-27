@@ -59,11 +59,11 @@ export class AppComponent implements OnInit {
     const handles = Array.from(document.querySelectorAll('.handle'));
     if (this.edit) {
       handles.forEach(handle => {
-        handle.style.display = 'block';
+        handle['style'].display = 'block';
       });
     } else { 
     handles.forEach(handle => {
-      handle.style.display = 'none';
+      handle['style'].display = 'none';
     });
   }
   }
