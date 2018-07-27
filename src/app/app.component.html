@@ -1,6 +1,15 @@
-<div class="row">
-    <app-todo class="col-md-3" data-item-id="1"></app-todo>
-    <app-weather class="col-md-3" data-item-id="2"></app-weather>
-    <app-time class="col-md-3" data-item-id="3"></app-time>
-    <app-bitcoin class="col-md-3" data-item-id="4"></app-bitcoin>
-</div>
+<mat-drawer-container fullscreen>
+  <mat-drawer #drawer>
+    <h1>HELP</h1>
+  </mat-drawer>
+  <mat-drawer-content class="cotainer-fluid">
+    <button mat-raised-button (click)="toggleEdit()">Edit</button>
+    <button mat-raised-button (click)="drawer.toggle()">Add</button>
+    <div class="row">
+      <app-todo class="col-md-3" data-item-id="1"></app-todo>
+      <app-weather class="col-md-3" data-item-id="2"></app-weather>
+      <app-time class="col-md-3" data-item-id="3"></app-time>
+      <app-bitcoin class="col-md-3" data-item-id="4"></app-bitcoin>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
