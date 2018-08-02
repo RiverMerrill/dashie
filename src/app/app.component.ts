@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterContentInit } from '@angular/core';
+import { Components } from './components';
 import 'rxjs/add/operator/map';
 
 
@@ -9,13 +10,20 @@ declare let Draggabilly: any;
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterContentInit {
   title = 'app';
+  public components = new Components;
+  public componentList;
   public pckry;
   public edit = true;
+  public widgets = ['todo', 'weather'];
 
   constructor() { }
   ngOnInit() {
+     this.componentList = this.components.list;
+   }
+  ngAfterContentInit() {
+    window.setTimeout(() => {
     let order: any;
     order = localStorage.getItem('itemsShiftPositions');
     const grid = document.querySelector('.row');
@@ -48,7 +56,7 @@ export class AppComponent implements OnInit {
       pckry.layout();
     }
     pckry.on('dragItemPositioned', _ => this.savePositions(pckry));
-    this.toggleEdit();
+  }, 1000);
   }
   savePositions(pckry) {
     const positions = this.getItemsShiftPositions(pckry);
@@ -61,7 +69,7 @@ export class AppComponent implements OnInit {
       handles.forEach(handle => {
         handle['style'].display = 'block';
       });
-    } else { 
+    } else {
     handles.forEach(handle => {
       handle['style'].display = 'none';
     });

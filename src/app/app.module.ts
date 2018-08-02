@@ -30,6 +30,7 @@ import { TimeComponent } from './time/time.component';
     DragulaModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [TodoComponent, BitcoinComponent]
 })
 export class AppModule { }

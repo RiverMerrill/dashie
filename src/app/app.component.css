@@ -8,3 +8,6 @@ body{
     overflow: hidden !important;
     height: 100%;
 }
+.component {
+    margin: 10px
+}
