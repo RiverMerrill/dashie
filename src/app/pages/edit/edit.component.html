@@ -1,3 +1,13 @@
-<p>
-  edit works!
-</p>
+<div class="container">
+    <div>
+        <button class="button is-primary" [routerLink]="''">Home</button>
+    </div>
+    <div class="columns">
+        <div class="box column is-half" *ngFor="let card of cards">
+            <div class="content">
+                <h6>{{ card.title }}</h6>
+                <p>{{ card.description }}</p>
+            </div>
+        </div>
+    </div>
+</div>
