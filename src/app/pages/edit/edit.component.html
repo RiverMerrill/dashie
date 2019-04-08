@@ -1,11 +1,15 @@
-<div class="container">
+<div>
     <div>
         <button class="button is-primary" [routerLink]="''">Home</button>
     </div>
     <div class="columns">
-        <div class="box column is-half" *ngFor="let card of cards">
-            <div class="content">
-                <h6>{{ card.title }}</h6>
+        <div class="column is-half" *ngFor="let card of cards">
+            <div class="content box">
+                <h6>{{ card.title }}
+                    <span (click)="addCard(card)" class="icon">
+                      <i class="fas fa-plus"></i>
+                    </span>
+                </h6>
                 <p>{{ card.description }}</p>
             </div>
         </div>

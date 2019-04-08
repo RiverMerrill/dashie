@@ -1,3 +1,13 @@
 <div>
-    <button class="button is-primary" [routerLink]="'edit'">Edit</button>
+    <div>
+        <button class="button is-primary" [routerLink]="'edit'">Edit</button>
+    </div>
+    <div class="columns">
+        <div class="column is-half" *ngFor="let card of (userCards$ | async)">
+            <div class="content box">
+                <h6>{{ card.title }}</h6>
+                <p>{{ card.description }}</p>
+            </div>
+        </div>
+    </div>
 </div>

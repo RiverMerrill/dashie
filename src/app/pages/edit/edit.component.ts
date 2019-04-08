@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Card } from '../../models/card.model';
 import { DefaultCards } from '../../state/default-cards';
+import { Store } from '@ngxs/store';
+import { AddCard } from '../../actions/card.actions';
 
 @Component({
     selector: 'app-edit',
@@ -8,17 +10,14 @@ import { DefaultCards } from '../../state/default-cards';
     styleUrls: ['./edit.component.css']
 })
 export class EditComponent implements OnInit {
-    public cards: Card[];
+    public cards: Card[] = DefaultCards.cards;
 
-    constructor() {
-        this.cards = DefaultCards.cards;
-
-        const newVar = {
-            name: 'test',
-            something: 'test2'
-        };
-    }
+    constructor(private store: Store) {}
 
     ngOnInit() {
+    }
+
+    addCard(card: Card) {
+        this.store.dispatch(new AddCard(card));
     }
 }

@@ -5,12 +5,14 @@ import { DefaultCards } from './default-cards';
 
 export class CardStateModel {
     cards: Card[];
+    userCards: Card[];
 }
 
 @State<CardStateModel>({
-    name: 'userCards',
+    name: 'cards',
     defaults: {
-        cards: DefaultCards.cards
+        cards: DefaultCards.cards,
+        userCards: []
     }
 })
 
@@ -24,14 +26,14 @@ export class CardState {
     add({getState, patchState}: StateContext<CardStateModel>, {payload}: AddCard) {
         const state = getState();
         patchState({
-            cards: [...state.cards, payload]
+            userCards: [...state.userCards, payload]
         });
     }
 
     @Action(RemoveCard)
     remove({getState, patchState}: StateContext<CardStateModel>, {payload}: RemoveCard) {
         patchState({
-            cards: getState().cards.filter(a => a.title !== payload)
+            userCards: getState().userCards.filter(a => a.title !== payload)
         });
     }
 }
