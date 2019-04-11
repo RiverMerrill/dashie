@@ -3,33 +3,28 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './pages/home/home.component';
-import { EditComponent } from './pages/edit/edit.component';
 
-import { NgxsModule } from '@ngxs/store';
-import { CardState } from './state/card.state';
-import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
-import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { WeatherComponent } from './components/weather/weather.component';
 import { BtcComponent } from './components/btc/btc.component';
-
+import { StoreModule } from '@ngrx/store';
+import { cardReducer } from './reducers/card.reducer';
+import { EditComponent } from './pages/edit/edit.component';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        HomeComponent,
-        EditComponent,
         WeatherComponent,
-        BtcComponent
+        BtcComponent,
+        EditComponent,
+        HomeComponent
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
-        NgxsReduxDevtoolsPluginModule.forRoot(),
-        NgxsLoggerPluginModule.forRoot(),
-        NgxsModule.forRoot([
-            CardState
-        ])
+        StoreModule.forRoot({
+            card: cardReducer
+        })
     ],
     providers: [],
     bootstrap: [AppComponent]

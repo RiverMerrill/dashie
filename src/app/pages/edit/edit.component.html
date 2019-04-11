@@ -1,15 +1,13 @@
-<div>
-    <div>
-        <button class="button is-primary" [routerLink]="''">Home</button>
-    </div>
+<div class="container">
+    <button class="button is-primary" [routerLink]="''">Home</button>
+    <h3>Available Cards</h3>
     <div class="columns">
-        <div class="column is-half" *ngFor="let card of cards">
+        <div class="column" *ngFor="let card of cards">
             <div class="content box">
-                <h6>{{ card.title }}
-                    <span (click)="addCard(card)" class="icon">
-                      <i class="fas fa-plus"></i>
-                    </span>
-                </h6>
+                <span (click)="addCard(card)" class="icon is-pulled-right">
+                  <i class="fas fa-plus"></i>
+                </span>
+                <h6>{{ card.title }}</h6>
                 <p>{{ card.description }}</p>
             </div>
         </div>

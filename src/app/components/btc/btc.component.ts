@@ -8,9 +8,6 @@ import { Card } from '../../models/card.model';
 })
 export class BtcComponent implements OnInit {
 
-  public static get info(): Card {
-    return {title: 'Bitcoin Ticker', description: 'Tells u bitcoin stuff', component: BtcComponent};
-  }
   constructor() { }
 
   ngOnInit() {

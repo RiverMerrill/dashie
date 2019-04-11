@@ -263,6 +263,10 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
+"@ngrx/store@^7.4.0":
+  version "7.4.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-7.4.0.tgz#525a343aa45d7f6ca60f3301a23a27669c14bbce"
+
 "@ngtools/webpack@7.0.7":
   version "7.0.7"
   resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-7.0.7.tgz#0cd933534a878f25f69448435302c82a861096a6"

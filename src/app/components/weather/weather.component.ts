@@ -8,10 +8,6 @@ import { Card } from '../../models/card.model';
 })
 export class WeatherComponent implements OnInit {
 
-    public static get info(): Card {
-        return {title: 'Weather', description: 'Weather stuff', component: WeatherComponent};
-    }
-
     constructor() {
     }
 
