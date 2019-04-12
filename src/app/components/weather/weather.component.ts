@@ -1,5 +1,4 @@
 import { AfterContentInit, Component, OnInit } from '@angular/core';
-import { Card } from '../../models/card.model';
 
 @Component({
     selector: 'app-weather',
@@ -7,10 +6,6 @@ import { Card } from '../../models/card.model';
     styleUrls: ['./weather.component.css']
 })
 export class WeatherComponent implements OnInit {
-
-    public static get info(): Card {
-        return {title: 'Weather', description: 'Weather stuff', component: WeatherComponent};
-    }
 
     constructor() {
     }
